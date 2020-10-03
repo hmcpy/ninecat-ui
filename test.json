@@ -1,0 +1,130 @@
+{
+  "name": "ninecat-ui",
+  "version": "1.0.23",
+  "description": "A Vue.js 3.0 Web UI Toolkit.",
+  "author": "ninecat-ui",
+  "private": false,
+  "main": "package/ninecat-ui.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --history-api-fallback --config build/webpack.config.dev.js",
+    "start": "npm run dev",
+    "prod": "webpack --config build/webpack.config.prod.js",
+    "prod-components": "webpack --config build/webpack.component.js",
+    "lint": "eslint --ext .js --ext .vue src --ext .vue packages --ext .vue",
+    "lint:fix": "eslint --ext .js,.vue src doc test packages --fix",
+    "lint:staged": "lint-staged",
+    "test:unit": "jest --config test/jest.config.js",
+    "test": "npm run lint && npm run test:unit",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand --config test/jest.config.js",
+    "docs:build": "webpack --config build/webpack.config.doc.js",
+    "createComponent": "node script/create-component.js",
+    "prod-all": "npm run prod && npm run prod-components"
+  },
+  "keywords": [
+    "ninecat",
+    "ninecat ui",
+    "ninecat-ui",
+    "ninecat Ui",
+    "Ninecat Ui",
+    "Ninecat",
+    "Vue.js 3.0 Web UI",
+    "Vue UI",
+    "Vue",
+    "Webpack 4"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@vue/babel-preset-app": "^4.4.4",
+    "@vue/composition-api": "^0.6.4",
+    "babel-preset-vca-jsx": "^0.3.5",
+    "core-js": "^3.6.5",
+    "vue": "2.6.10",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@babel/preset-env": "7.5.5",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-jest": "24.9.0",
+    "babel-loader": "8.0.6",
+    "babel-plugin-jsx-v-model": "^2.0.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "5.0.4",
+    "css-loader": "2.1.1",
+    "deepmerge": "^4.2.2",
+    "docsearch.js": "^2.6.3",
+    "eslint": "5.16.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-loader": "2.2.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.0",
+    "eslint-plugin-vue": "5.2.3",
+    "file-loader": "4.2.0",
+    "friendly-errors-webpack-plugin": "1.7.0",
+    "highlight.js": "^9.18.1",
+    "html-webpack-plugin": "3.2.0",
+    "husky": "2.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "24.9.0",
+    "jest-serializer-vue": "2.0.2",
+    "lint-staged": "8.2.1",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-chain": "^1.3.0",
+    "markdown-it-container": "^2.0.0",
+    "mini-css-extract-plugin": "0.5.0",
+    "node-sass": "4.12.0",
+    "sass-loader": "7.2.0",
+    "style-loader": "0.23.1",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
+    "transliteration": "^2.1.8",
+    "ts-jest": "^26.1.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "uglify-es": "3.3.9",
+    "url-loader": "1.1.2",
+    "vue-jest": "3.0.4",
+    "vue-loader": "15.7.0",
+    "vue-markdown": "^2.2.4",
+    "vue-router": "3.0.6",
+    "vue-style-loader": "4.1.2",
+    "vue-template-compiler": "2.6.10",
+    "webpack": "4.39.2",
+    "webpack-cli": "3.3.6",
+    "webpack-dev-server": "3.8.0",
+    "webpack-merge": "4.2.1"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "eslint --ignore-path .gitignore --fix"
+      ]
+    },
+    "ignore": []
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "files": [
+    "package"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ninecat-ui/ninecat-ui"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -81,17 +81,17 @@ module.exports = {
       },{
         test: /\.tsx$/,
         exclude: /node_modules/,
-        loader: ['babel-loader', 'ts-loader']
+        loader: ['babel-loader', 'ts-loader'],
       }
     ]
   },
 
   plugins: [
     new VueLoaderPlugin(),
-    new CopyWebpackPlugin([{
-      from: utils.resolve('static/img'),
-      to: utils.resolve('dist/static/img'),
-      toType: 'dir'
-    }])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: utils.resolve('static/img'), to: utils.resolve('dist/static/img') },
+      ],
+    })
   ]
 }
